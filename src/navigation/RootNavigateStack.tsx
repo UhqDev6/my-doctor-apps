@@ -4,9 +4,10 @@ export enum routesEnums {
   LOGIN_SCREEN = 'LoginScreen',
   REGISTER_SCREEN = 'RegisterScreen',
   UPLOADPHOTO_SCREEN = 'UploadPhotoScreen',
-  DOCTOR_SCREEN = 'DoctorScreen',
-  MESSAGE_SCREEN = 'MessageScreen',
-  HOSPITAL_SCREEN = 'HospitalScreen',
+  DOCTOR_SCREEN = 'Doctor',
+  MESSAGE_SCREEN = 'Message',
+  HOSPITAL_SCREEN = 'Hospital',
+  MAINAPP_SCREEN = 'MainAppScreen',
 }
 
 export type RootStackParams = {
@@ -18,4 +19,5 @@ export type RootStackParams = {
   [routesEnums.DOCTOR_SCREEN]: undefined;
   [routesEnums.MESSAGE_SCREEN]: undefined;
   [routesEnums.HOSPITAL_SCREEN]: undefined;
+  [routesEnums.MAINAPP_SCREEN]: undefined;
 };

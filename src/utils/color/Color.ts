@@ -6,6 +6,8 @@ interface Color {
   text: {
     primary: string;
     secondary: string;
+    inActive: string;
+    active: string;
   };
   button: {
     primary: {
@@ -23,6 +25,7 @@ interface Color {
 const MainColors = {
   green1: '#0BCAD4',
   dark1: '#112340',
+  dark2: '#495A75',
   gray1: '#7D8797',
   gray2: '#E9E9E9',
 };
@@ -35,6 +38,8 @@ const colors: Color = {
   text: {
     primary: MainColors.dark1,
     secondary: MainColors.gray1,
+    inActive: MainColors.dark2,
+    active: MainColors.green1,
   },
   button: {
     primary: {

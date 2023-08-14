@@ -1,3 +1,4 @@
 import Header from './Header/Header';
+import ButtonNavigator from './ButtonNavigator/ButtonNavigator';
 
-export {Header};
+export {Header, ButtonNavigator};
