@@ -20,10 +20,12 @@ interface Color {
     };
   };
   border: string;
+  cardLight: string;
 }
 
 const MainColors = {
   green1: '#0BCAD4',
+  green2: '#EDFCFD',
   dark1: '#112340',
   dark2: '#495A75',
   gray1: '#7D8797',
@@ -52,6 +54,7 @@ const colors: Color = {
     },
   },
   border: MainColors.gray2,
+  cardLight: MainColors.green2,
 };
 
 export {colors};
