@@ -1,14 +1,31 @@
 import {StyleSheet, Text, View} from 'react-native';
 import React from 'react';
-import {ILDoctor1} from '../../../assets';
+import {ILDoctor1, ILDoctor2, ILDoctor3} from '../../../assets';
 import {colors, fonts} from '../../../utils';
 
-export default function DoctorCategory() {
+type IProps = {
+  category: string;
+};
+
+export default function DoctorCategory(props: IProps) {
+  const {category} = props;
+  const Icon = () => {
+    if (category === 'dokter umum') {
+      return <ILDoctor1 style={styles.ilustration} />;
+    }
+    if (category === 'psikiater') {
+      return <ILDoctor2 style={styles.ilustration} />;
+    }
+    if (category === 'dokter obat') {
+      return <ILDoctor3 style={styles.ilustration} />;
+    }
+    return <ILDoctor1 style={styles.ilustration} />;
+  };
   return (
     <View style={styles.container}>
-      <ILDoctor1 style={styles.ilustration} />
+      <Icon />
       <Text style={styles.label}>Saya Butuh</Text>
-      <Text style={styles.category}>Dokter Umum</Text>
+      <Text style={styles.category}>{category}</Text>
     </View>
   );
 }

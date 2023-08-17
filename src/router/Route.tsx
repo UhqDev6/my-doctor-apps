@@ -18,13 +18,15 @@ const Tab = createBottomTabNavigator();
 const MainApp = () => {
   return (
     // eslint-disable-next-line react/no-unstable-nested-components
-    <Tab.Navigator tabBar={props => <ButtonNavigator {...props} />}>
+    <Tab.Navigator
+      screenOptions={{headerShown: false}}
+      tabBar={props => <ButtonNavigator {...props} />}>
       <Tab.Screen name={routesEnums.DOCTOR_SCREEN} component={DoctorScreen} />
+      <Tab.Screen name={routesEnums.MESSAGE_SCREEN} component={MessageScreen} />
       <Tab.Screen
         name={routesEnums.HOSPITAL_SCREEN}
         component={HospitalScreen}
       />
-      <Tab.Screen name={routesEnums.MESSAGE_SCREEN} component={MessageScreen} />
     </Tab.Navigator>
   );
 };

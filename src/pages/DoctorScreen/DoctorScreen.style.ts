@@ -23,7 +23,6 @@ export default StyleSheet.create({
   content: {
     backgroundColor: colors.white,
     flex: 1,
-    paddingHorizontal: 16,
     borderBottomLeftRadius: 20,
     borderBottomRightRadius: 20,
   },
@@ -33,5 +32,8 @@ export default StyleSheet.create({
     color: colors.text.primary,
     marginTop: 30,
     marginBottom: 16,
+  },
+  wrapperSection: {
+    paddingHorizontal: 16,
   },
 });

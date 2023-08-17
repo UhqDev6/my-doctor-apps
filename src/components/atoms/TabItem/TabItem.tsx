@@ -24,11 +24,11 @@ export default function TabItem(props: IProps) {
     if (title === 'Doctor') {
       return active ? <ICDoctorActive /> : <ICDoctor />;
     }
-    if (title === 'Hospital') {
-      return active ? <ICHospitalsActive /> : <ICHospitals />;
-    }
     if (title === 'Message') {
       return active ? <ICMessagesActive /> : <ICMessages />;
+    }
+    if (title === 'Hospital') {
+      return active ? <ICHospitalsActive /> : <ICHospitals />;
     }
     return <ICDoctor />;
   };
