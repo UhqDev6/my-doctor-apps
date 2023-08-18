@@ -2,18 +2,20 @@ import {StyleSheet, Text, TouchableOpacity} from 'react-native';
 import React from 'react';
 import {colors, fonts} from '../../../utils';
 import IconOnly from './IconOnly';
+import BtnIconSend from './BtnIconSend';
 
-type ButtonType = 'primary' | 'secondary' | 'icon-only';
+type ButtonType = 'primary' | 'secondary' | 'icon-only' | 'btn-icon-send';
 
 type IProps = {
   type?: ButtonType;
   title?: string;
   onPress?: () => void;
   icon?: string;
+  disable?: boolean;
 };
 
 export default function Button(props: IProps) {
-  const {type, title, onPress, icon} = props;
+  const {type, title, onPress, icon, disable} = props;
 
   // Kondisional style berdasarkan type
   const containerStyle =
@@ -23,6 +25,10 @@ export default function Button(props: IProps) {
 
   if (type === 'icon-only') {
     return <IconOnly icon={icon} onPress={onPress} />;
+  }
+
+  if (type === 'btn-icon-send') {
+    return <BtnIconSend disable={disable} />;
   }
 
   return (

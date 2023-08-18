@@ -1,6 +1,8 @@
 import React from 'react';
 import {createNativeStackNavigator} from '@react-navigation/native-stack';
 import {
+  ChattingScreen,
+  ChooseDoctorScreen,
   DoctorScreen,
   GetStartedScreen,
   HospitalScreen,
@@ -50,6 +52,14 @@ const Route = () => {
         component={UploadPhotoScreen}
       />
       <Stack.Screen name={routesEnums.MAINAPP_SCREEN} component={MainApp} />
+      <Stack.Screen
+        name={routesEnums.CHOOSEDOCTOR_SCREEN}
+        component={ChooseDoctorScreen}
+      />
+      <Stack.Screen
+        name={routesEnums.CHATTING_SCREEN}
+        component={ChattingScreen}
+      />
     </Stack.Navigator>
   );
 };

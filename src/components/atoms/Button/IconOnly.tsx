@@ -1,6 +1,6 @@
 import {StyleSheet, TouchableOpacity} from 'react-native';
 import React from 'react';
-import {ICBackDark} from '../../../assets';
+import {ICBackDark, ICBackLight} from '../../../assets';
 
 type IProps = {
   onPress?: () => void;
@@ -14,7 +14,7 @@ export default function IconOnly(props: IProps) {
     if (icon === 'back-dark') {
       return <ICBackDark />;
     } else if (icon === 'back-light') {
-      return <ICBackDark />;
+      return <ICBackLight />;
     }
     return <ICBackDark />;
   };

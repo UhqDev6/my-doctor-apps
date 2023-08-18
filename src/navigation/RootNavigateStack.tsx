@@ -8,6 +8,8 @@ export enum routesEnums {
   MESSAGE_SCREEN = 'Message',
   HOSPITAL_SCREEN = 'Hospital',
   MAINAPP_SCREEN = 'MainAppScreen',
+  CHOOSEDOCTOR_SCREEN = 'ChooseDoctorScreen',
+  CHATTING_SCREEN = 'ChattingScreen',
 }
 
 export type RootStackParams = {
@@ -20,4 +22,6 @@ export type RootStackParams = {
   [routesEnums.MESSAGE_SCREEN]: undefined;
   [routesEnums.HOSPITAL_SCREEN]: undefined;
   [routesEnums.MAINAPP_SCREEN]: undefined;
+  [routesEnums.CHOOSEDOCTOR_SCREEN]: undefined;
+  [routesEnums.CHATTING_SCREEN]: undefined;
 };

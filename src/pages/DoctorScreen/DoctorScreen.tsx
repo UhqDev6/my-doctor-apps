@@ -9,8 +9,16 @@ import {
   RatedDoctor,
 } from '../../components';
 import {JSONCategory} from '../../assets';
+import {NativeStackNavigationProp} from '@react-navigation/native-stack';
+import {ParamListBase} from '@react-navigation/native';
+import {routesEnums} from '../../navigation';
 
-export default function DoctorScreen() {
+interface IProps {
+  navigation: NativeStackNavigationProp<ParamListBase>;
+}
+
+export default function DoctorScreen(props: IProps) {
+  const {navigation} = props;
   return (
     <View style={DoctorScreenStyle.container}>
       <View style={DoctorScreenStyle.content}>
@@ -30,6 +38,9 @@ export default function DoctorScreen() {
                   <DoctorCategory
                     key={category.id}
                     category={category.category}
+                    onPress={() =>
+                      navigation.navigate(routesEnums.CHOOSEDOCTOR_SCREEN)
+                    }
                   />
                 ))}
                 <Gap width={22} />

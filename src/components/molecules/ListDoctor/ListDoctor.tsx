@@ -1,23 +1,34 @@
-import {Image, ImageSourcePropType, StyleSheet, Text, View} from 'react-native';
+import {
+  Image,
+  ImageSourcePropType,
+  StyleSheet,
+  Text,
+  TouchableOpacity,
+  View,
+} from 'react-native';
 import React from 'react';
 import {colors, fonts} from '../../../utils';
+import {ICArrowRight} from '../../../assets';
 
 type IProps = {
   profile: ImageSourcePropType;
   name: string;
   desc: string;
+  type: string;
+  onPress: () => void;
 };
 
 export default function ListDoctor(props: IProps) {
-  const {profile, name, desc} = props;
+  const {profile, name, desc, type, onPress} = props;
   return (
-    <View style={styles.container}>
+    <TouchableOpacity style={styles.container} onPress={onPress}>
       <Image source={profile} style={styles.avatar} />
-      <View>
+      <View style={styles.content}>
         <Text style={styles.name}>{name}</Text>
         <Text style={styles.desc}>{desc}</Text>
       </View>
-    </View>
+      {type === 'next' && <ICArrowRight />}
+    </TouchableOpacity>
   );
 }
 
@@ -28,6 +39,10 @@ const styles = StyleSheet.create({
     borderBottomWidth: 1,
     borderBottomColor: colors.border,
     alignItems: 'center',
+    justifyContent: 'space-between',
+  },
+  content: {
+    flex: 1,
   },
   avatar: {
     width: 46,

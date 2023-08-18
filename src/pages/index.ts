@@ -6,6 +6,8 @@ import UploadPhotoScreen from './UploadPhotoScreen/UploadPhotoScreen';
 import DoctorScreen from './DoctorScreen/DoctorScreen';
 import HospitalScreen from './HospitalScreen/HospitalScreen';
 import MessageScreen from './MessageScreen/MessageScreen';
+import ChooseDoctorScreen from './ChooseDoctorScreen/ChooseDoctorScreen';
+import ChattingScreen from './ChattingScreen/ChattingScreen';
 
 export {
   SplashScreen,
@@ -16,4 +18,6 @@ export {
   DoctorScreen,
   HospitalScreen,
   MessageScreen,
+  ChooseDoctorScreen,
+  ChattingScreen,
 };

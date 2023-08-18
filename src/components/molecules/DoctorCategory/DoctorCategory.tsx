@@ -1,14 +1,16 @@
-import {StyleSheet, Text, View} from 'react-native';
+import {StyleSheet, Text, TouchableOpacity} from 'react-native';
 import React from 'react';
 import {ILDoctor1, ILDoctor2, ILDoctor3} from '../../../assets';
 import {colors, fonts} from '../../../utils';
 
 type IProps = {
   category: string;
+  onPress: () => void;
 };
 
 export default function DoctorCategory(props: IProps) {
-  const {category} = props;
+  const {category, onPress} = props;
+  // eslint-disable-next-line react/no-unstable-nested-components
   const Icon = () => {
     if (category === 'dokter umum') {
       return <ILDoctor1 style={styles.ilustration} />;
@@ -22,11 +24,11 @@ export default function DoctorCategory(props: IProps) {
     return <ILDoctor1 style={styles.ilustration} />;
   };
   return (
-    <View style={styles.container}>
+    <TouchableOpacity style={styles.container} onPress={onPress}>
       <Icon />
       <Text style={styles.label}>Saya Butuh</Text>
       <Text style={styles.category}>{category}</Text>
-    </View>
+    </TouchableOpacity>
   );
 }
 

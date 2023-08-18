@@ -8,6 +8,10 @@ import ICDoctorActive from './ic_doctor_active.svg';
 import ICHospitalsActive from './ic_hospital_active.svg';
 import ICMessagesActive from './ic_message_active.svg';
 import ICStart from './ic_start.svg';
+import ICArrowRight from './arrowRight.svg';
+import ICBackLight from './arrowLeftLight.svg';
+import ICSendPrimary from './sendPrimary.svg';
+import ICSendSecondary from './sendSecondary.svg';
 
 export {
   ICBackDark,
@@ -20,4 +24,8 @@ export {
   ICHospitalsActive,
   ICMessagesActive,
   ICStart,
+  ICArrowRight,
+  ICBackLight,
+  ICSendPrimary,
+  ICSendSecondary,
 };
