@@ -3,8 +3,16 @@ import React, {useState} from 'react';
 import UserProfileScreenStyle from './UserProfileScreen.style';
 import {Gap, Header, List, Profile} from '../../components';
 import {ICEditProfile} from '../../assets';
+import {NativeStackNavigationProp} from '@react-navigation/native-stack';
+import {ParamListBase} from '@react-navigation/native';
+import {routesEnums} from '../../navigation';
 
-export default function UserProfileScreen() {
+interface IProps {
+  navigation: NativeStackNavigationProp<ParamListBase>;
+}
+
+export default function UserProfileScreen(props: IProps) {
+  const {navigation} = props;
   const [list] = useState([
     {
       id: 1,
@@ -13,6 +21,7 @@ export default function UserProfileScreen() {
       desc: 'Last update yesterday',
       type: 'next',
       icon: 'edit-profile',
+      onPress: () => navigation.navigate(routesEnums.UPDATEPROFILE_SCREEN),
     },
     {
       id: 2,
@@ -53,6 +62,7 @@ export default function UserProfileScreen() {
           desc={listProfile.desc}
           type={listProfile.type}
           icon={listProfile.icon}
+          onPress={listProfile.onPress}
         />
       ))}
     </View>

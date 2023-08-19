@@ -10,6 +10,7 @@ import {
   MessageScreen,
   RegisterScreen,
   SplashScreen,
+  UpdateProfileScreen,
   UploadPhotoScreen,
   UserProfileScreen,
 } from '../pages';
@@ -64,6 +65,10 @@ const Route = () => {
       <Stack.Screen
         name={routesEnums.USERPROFILE_SCREEN}
         component={UserProfileScreen}
+      />
+      <Stack.Screen
+        name={routesEnums.UPDATEPROFILE_SCREEN}
+        component={UpdateProfileScreen}
       />
     </Stack.Navigator>
   );
