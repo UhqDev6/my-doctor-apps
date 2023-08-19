@@ -10,6 +10,7 @@ import ChooseDoctorScreen from './ChooseDoctorScreen/ChooseDoctorScreen';
 import ChattingScreen from './ChattingScreen/ChattingScreen';
 import UserProfileScreen from './UserProfileScreen/UserProfileScreen';
 import UpdateProfileScreen from './UpdateProfileScreen/UpdateProfileScreen';
+import DoctorProfileScreen from './DoctorProfileScreen/DoctorProfileScreen';
 
 export {
   SplashScreen,
@@ -24,4 +25,5 @@ export {
   ChattingScreen,
   UserProfileScreen,
   UpdateProfileScreen,
+  DoctorProfileScreen,
 };

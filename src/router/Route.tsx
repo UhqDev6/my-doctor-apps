@@ -3,6 +3,7 @@ import {createNativeStackNavigator} from '@react-navigation/native-stack';
 import {
   ChattingScreen,
   ChooseDoctorScreen,
+  DoctorProfileScreen,
   DoctorScreen,
   GetStartedScreen,
   HospitalScreen,
@@ -69,6 +70,10 @@ const Route = () => {
       <Stack.Screen
         name={routesEnums.UPDATEPROFILE_SCREEN}
         component={UpdateProfileScreen}
+      />
+      <Stack.Screen
+        name={routesEnums.DOCTORPROFILE_SCREEN}
+        component={DoctorProfileScreen}
       />
     </Stack.Navigator>
   );
