@@ -9,6 +9,7 @@ import MessageScreen from './MessageScreen/MessageScreen';
 import ChooseDoctorScreen from './ChooseDoctorScreen/ChooseDoctorScreen';
 import ChattingScreen from './ChattingScreen/ChattingScreen';
 import UserProfileScreen from './UserProfileScreen/UserProfileScreen';
+import UpdateProfileScreen from './UpdateProfileScreen/UpdateProfileScreen';
 
 export {
   SplashScreen,
@@ -22,4 +23,5 @@ export {
   ChooseDoctorScreen,
   ChattingScreen,
   UserProfileScreen,
+  UpdateProfileScreen,
 };

@@ -1,16 +1,27 @@
 import {Image, StyleSheet, Text, View} from 'react-native';
 import React from 'react';
-import {Image5} from '../../../assets';
+import {ICRemovePhoto, Image5} from '../../../assets';
 import {colors, fonts} from '../../../utils';
 
-export default function Profile() {
+type IProps = {
+  name: string;
+  desc: string;
+};
+
+export default function Profile(props: IProps) {
+  const {name, desc} = props;
   return (
     <View style={styles.container}>
       <View style={styles.borderProfile}>
         <Image source={Image5} style={styles.avatar} />
+        <ICRemovePhoto style={styles.removePhoto} />
       </View>
-      <Text style={styles.name}>Profile</Text>
-      <Text style={styles.profession}>Frontend Developer</Text>
+      {name && (
+        <View>
+          <Text style={styles.name}>{name}</Text>
+          <Text style={styles.profession}>{desc}</Text>
+        </View>
+      )}
     </View>
   );
 }
@@ -45,5 +56,10 @@ const styles = StyleSheet.create({
     fontFamily: fonts.primary[600],
     color: colors.text.secondary,
     marginTop: 2,
+  },
+  removePhoto: {
+    position: 'absolute',
+    right: 8,
+    bottom: 8,
   },
 });
