@@ -18,7 +18,7 @@ export default function Header(props: IProps) {
   const typeRadiusRight = type === 'dark' ? 20 : 0;
 
   if (type === 'dark-profile') {
-    return <DarkHeader />;
+    return <DarkHeader onPress={onPress} />;
   }
   return (
     <View

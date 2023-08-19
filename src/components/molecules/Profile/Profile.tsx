@@ -4,17 +4,18 @@ import {ICRemovePhoto, Image5} from '../../../assets';
 import {colors, fonts} from '../../../utils';
 
 type IProps = {
-  name: string;
-  desc: string;
+  name?: string;
+  desc?: string;
+  isRemove?: boolean;
 };
 
 export default function Profile(props: IProps) {
-  const {name, desc} = props;
+  const {name, desc, isRemove} = props;
   return (
     <View style={styles.container}>
       <View style={styles.borderProfile}>
         <Image source={Image5} style={styles.avatar} />
-        <ICRemovePhoto style={styles.removePhoto} />
+        {isRemove && <ICRemovePhoto style={styles.removePhoto} />}
       </View>
       {name && (
         <View>

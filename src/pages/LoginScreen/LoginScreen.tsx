@@ -29,7 +29,12 @@ export default function LoginScreen(props: IProps) {
         onPress={() => navigation.replace(routesEnums.MAINAPP_SCREEN)}
       />
       <Gap height={30} />
-      <Link title="Create new account" size={16} align="center" />
+      <Link
+        title="Create new account"
+        size={16}
+        align="center"
+        onPress={() => navigation.navigate(routesEnums.REGISTER_SCREEN)}
+      />
     </View>
   );
 }

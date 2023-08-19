@@ -3,8 +3,16 @@ import React from 'react';
 import UploadPhotoScreenStyle from './UploadPhotoScreen.style';
 import {Button, Gap, Header, Link} from '../../components';
 import {ICAddPhoto, ILEmptyPhoto} from '../../assets';
+import {NativeStackNavigationProp} from '@react-navigation/native-stack';
+import {ParamListBase} from '@react-navigation/native';
+import {routesEnums} from '../../navigation';
 
-export default function UploadPhotoScreen() {
+interface IProps {
+  navigation: NativeStackNavigationProp<ParamListBase>;
+}
+
+export default function UploadPhotoScreen(props: IProps) {
+  const {navigation} = props;
   return (
     <View style={UploadPhotoScreenStyle.container}>
       <Header title="Upload Photo" />
@@ -23,9 +31,18 @@ export default function UploadPhotoScreen() {
           </Text>
         </View>
         <View>
-          <Button title="Upload and Continue" type="primary" />
+          <Button
+            title="Upload and Continue"
+            type="primary"
+            onPress={() => navigation.replace(routesEnums.MAINAPP_SCREEN)}
+          />
           <Gap height={30} />
-          <Link title="Skip for this" align="center" size={16} />
+          <Link
+            title="Skip for this"
+            align="center"
+            size={16}
+            onPress={() => navigation.replace(routesEnums.MAINAPP_SCREEN)}
+          />
         </View>
       </View>
     </View>

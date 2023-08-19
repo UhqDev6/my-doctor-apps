@@ -4,10 +4,15 @@ import {colors, fonts} from '../../../utils';
 import {Button} from '../../atoms';
 import {Image4} from '../../../assets';
 
-export default function DarkHeader() {
+type IProps = {
+  onPress?: () => void;
+};
+
+export default function DarkHeader(props: IProps) {
+  const {onPress} = props;
   return (
     <View style={styles.container}>
-      <Button type="icon-only" icon="back-light" />
+      <Button type="icon-only" icon="back-light" onPress={onPress} />
       <View style={styles.content}>
         <Text style={styles.name}>Andi Alfian Putra</Text>
         <Text style={styles.desc}>Dokter Anak</Text>

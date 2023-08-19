@@ -50,9 +50,9 @@ export default function UserProfileScreen(props: IProps) {
   ]);
   return (
     <View style={UserProfileScreenStyle.container}>
-      <Header title="Profile" />
+      <Header title="Profile" onPress={() => navigation.goBack()} />
       <Gap height={10} />
-      <Profile />
+      <Profile name="Andi Alfian Putra" desc="Frontend Developer" />
       <Gap height={14} />
       {list?.map(listProfile => (
         <List

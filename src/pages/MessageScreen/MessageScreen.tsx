@@ -3,8 +3,16 @@ import React, {useState} from 'react';
 import MessageScreenStyle from './MessageScreen.style';
 import {Image4, Image5, Image6} from '../../assets';
 import {List} from '../../components';
+import {NativeStackNavigationProp} from '@react-navigation/native-stack';
+import {ParamListBase} from '@react-navigation/native';
+import {routesEnums} from '../../navigation';
 
-export default function MessageScreen() {
+interface IProps {
+  navigation: NativeStackNavigationProp<ParamListBase>;
+}
+
+export default function MessageScreen(props: IProps) {
+  const {navigation} = props;
   const [doctor] = useState([
     {
       id: 1,
@@ -31,7 +39,12 @@ export default function MessageScreen() {
         <Text style={MessageScreenStyle.title}>Message</Text>
         {doctor.map(doc => (
           <View key={doc.id}>
-            <List profile={doc.profile} name={doc.name} desc={doc.desc} />
+            <List
+              profile={doc.profile}
+              name={doc.name}
+              desc={doc.desc}
+              onPress={() => navigation.navigate(routesEnums.CHATTING_SCREEN)}
+            />
           </View>
         ))}
       </View>
