@@ -9,7 +9,7 @@ export default function ChattingScreen() {
       <Header type="dark-profile" title="Andi Alfian Putra" />
       <View style={ChattingScreenStyle.content}>
         <Text style={ChattingScreenStyle.chatDate}>Senin, 18 Agustus 2023</Text>
-        <ChatItem />
+        <ChatItem isMe />
         <ChatItem />
         <ChatItem />
       </View>
