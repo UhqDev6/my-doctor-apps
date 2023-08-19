@@ -6,8 +6,8 @@ import DarkHeader from './DarkHeader';
 
 type IProps = {
   onPress?: () => void;
-  title: string;
-  type: string;
+  title?: string;
+  type?: string;
 };
 
 export default function Header(props: IProps) {

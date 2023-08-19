@@ -1,3 +1,4 @@
+/* eslint-disable react/no-unstable-nested-components */
 import {
   Image,
   ImageSourcePropType,
@@ -8,21 +9,45 @@ import {
 } from 'react-native';
 import React from 'react';
 import {colors, fonts} from '../../../utils';
-import {ICArrowRight} from '../../../assets';
+import {
+  ICArrowRight,
+  ICEditProfile,
+  ICHelp,
+  ICLanguage,
+  ICRate,
+} from '../../../assets';
 
 type IProps = {
   profile: ImageSourcePropType;
-  name: string;
-  desc: string;
-  type: string;
-  onPress: () => void;
+  name?: string;
+  desc?: string;
+  type?: string;
+  onPress?: () => void;
+  icon?: string;
 };
 
-export default function ListDoctor(props: IProps) {
-  const {profile, name, desc, type, onPress} = props;
+export default function List(props: IProps) {
+  const {profile, name, desc, type, onPress, icon} = props;
+
+  const Icon = () => {
+    if (icon === 'edit-profile') {
+      return <ICEditProfile />;
+    }
+    if (icon === 'language') {
+      return <ICLanguage />;
+    }
+    if (icon === 'rate') {
+      return <ICRate />;
+    }
+    if (icon === 'help') {
+      return <ICHelp />;
+    }
+    return <ICEditProfile />;
+  };
+
   return (
     <TouchableOpacity style={styles.container} onPress={onPress}>
-      <Image source={profile} style={styles.avatar} />
+      {icon ? <Icon /> : <Image source={profile} style={styles.avatar} />}
       <View style={styles.content}>
         <Text style={styles.name}>{name}</Text>
         <Text style={styles.desc}>{desc}</Text>
@@ -43,12 +68,12 @@ const styles = StyleSheet.create({
   },
   content: {
     flex: 1,
+    marginLeft: 16,
   },
   avatar: {
     width: 46,
     height: 46,
     borderRadius: 46 / 2,
-    marginRight: 12,
   },
   name: {
     fontSize: 16,

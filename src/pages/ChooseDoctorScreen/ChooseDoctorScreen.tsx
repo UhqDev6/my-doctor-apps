@@ -1,6 +1,6 @@
 import {View} from 'react-native';
 import React, {useState} from 'react';
-import {Header, ListDoctor} from '../../components';
+import {Header, List} from '../../components';
 import {Image4, Image5, Image6} from '../../assets';
 import ChooseDoctorScreenStyle from './ChooseDoctorScreen.style';
 import {NativeStackNavigationProp} from '@react-navigation/native-stack';
@@ -53,7 +53,7 @@ export default function ChooseDoctorScreen(props: IProps) {
         onPress={() => navigation.goBack()}
       />
       {doctor.map(doc => (
-        <ListDoctor
+        <List
           key={doc.id}
           profile={doc.profile}
           name={doc.name}

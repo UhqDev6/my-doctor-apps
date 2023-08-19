@@ -11,6 +11,7 @@ import {
   RegisterScreen,
   SplashScreen,
   UploadPhotoScreen,
+  UserProfileScreen,
 } from '../pages';
 import {routesEnums} from '../navigation';
 import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
@@ -19,9 +20,9 @@ const Stack = createNativeStackNavigator();
 const Tab = createBottomTabNavigator();
 const MainApp = () => {
   return (
-    // eslint-disable-next-line react/no-unstable-nested-components
     <Tab.Navigator
       screenOptions={{headerShown: false}}
+      // eslint-disable-next-line react/no-unstable-nested-components
       tabBar={props => <ButtonNavigator {...props} />}>
       <Tab.Screen name={routesEnums.DOCTOR_SCREEN} component={DoctorScreen} />
       <Tab.Screen name={routesEnums.MESSAGE_SCREEN} component={MessageScreen} />
@@ -59,6 +60,10 @@ const Route = () => {
       <Stack.Screen
         name={routesEnums.CHATTING_SCREEN}
         component={ChattingScreen}
+      />
+      <Stack.Screen
+        name={routesEnums.USERPROFILE_SCREEN}
+        component={UserProfileScreen}
       />
     </Stack.Navigator>
   );
