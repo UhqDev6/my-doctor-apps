@@ -12,6 +12,7 @@ export enum routesEnums {
   CHATTING_SCREEN = 'ChattingScreen',
   USERPROFILE_SCREEN = 'UserProfileScreen',
   UPDATEPROFILE_SCREEN = 'UpdateProfileScreen',
+  DOCTORPROFILE_SCREEN = 'DoctorProfileScreen',
 }
 
 export type RootStackParams = {
@@ -28,4 +29,5 @@ export type RootStackParams = {
   [routesEnums.CHATTING_SCREEN]: undefined;
   [routesEnums.USERPROFILE_SCREEN]: undefined;
   [routesEnums.UPDATEPROFILE_SCREEN]: undefined;
+  [routesEnums.DOCTORPROFILE_SCREEN]: undefined;
 };
