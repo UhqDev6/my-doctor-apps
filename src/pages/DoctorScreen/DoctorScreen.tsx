@@ -25,7 +25,11 @@ export default function DoctorScreen(props: IProps) {
         <ScrollView showsVerticalScrollIndicator={false}>
           <View style={DoctorScreenStyle.wrapperSection}>
             <Gap height={30} />
-            <HomeProfile />
+            <HomeProfile
+              onPress={() =>
+                navigation.navigate(routesEnums.USERPROFILE_SCREEN)
+              }
+            />
             <Text style={DoctorScreenStyle.welcome}>
               Mau konsultasi dengan siapa hari ini
             </Text>

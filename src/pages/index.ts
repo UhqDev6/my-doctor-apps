@@ -8,6 +8,7 @@ import HospitalScreen from './HospitalScreen/HospitalScreen';
 import MessageScreen from './MessageScreen/MessageScreen';
 import ChooseDoctorScreen from './ChooseDoctorScreen/ChooseDoctorScreen';
 import ChattingScreen from './ChattingScreen/ChattingScreen';
+import UserProfileScreen from './UserProfileScreen/UserProfileScreen';
 
 export {
   SplashScreen,
@@ -20,4 +21,5 @@ export {
   MessageScreen,
   ChooseDoctorScreen,
   ChattingScreen,
+  UserProfileScreen,
 };

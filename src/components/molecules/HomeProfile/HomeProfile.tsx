@@ -1,17 +1,22 @@
-import {Image, StyleSheet, Text, View} from 'react-native';
+import {Image, StyleSheet, Text, TouchableOpacity, View} from 'react-native';
 import React from 'react';
 import {User} from '../../../assets';
 import {colors, fonts} from '../../../utils';
 
-export default function HomeProfile() {
+type IProps = {
+  onPress: () => void;
+};
+
+export default function HomeProfile(props: IProps) {
+  const {onPress} = props;
   return (
-    <View style={styles.container}>
+    <TouchableOpacity style={styles.container} onPress={onPress}>
       <Image source={User} style={styles.avatar} />
       <View>
         <Text style={styles.name}>Dhiya Ulhaq</Text>
         <Text style={styles.profession}>Frontend Developer</Text>
       </View>
-    </View>
+    </TouchableOpacity>
   );
 }
 

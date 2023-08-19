@@ -12,6 +12,10 @@ import ICArrowRight from './arrowRight.svg';
 import ICBackLight from './arrowLeftLight.svg';
 import ICSendPrimary from './sendPrimary.svg';
 import ICSendSecondary from './sendSecondary.svg';
+import ICEditProfile from './ic-edit-profile.svg';
+import ICLanguage from './ic-language.svg';
+import ICRate from './ic-rate.svg';
+import ICHelp from './ic-help.svg';
 
 export {
   ICBackDark,
@@ -28,4 +32,8 @@ export {
   ICBackLight,
   ICSendPrimary,
   ICSendSecondary,
+  ICEditProfile,
+  ICHelp,
+  ICLanguage,
+  ICRate,
 };

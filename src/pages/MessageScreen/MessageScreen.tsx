@@ -1,8 +1,8 @@
 import {Text, View} from 'react-native';
 import React, {useState} from 'react';
 import MessageScreenStyle from './MessageScreen.style';
-import {ListDoctor} from '../../components';
 import {Image4, Image5, Image6} from '../../assets';
+import {List} from '../../components';
 
 export default function MessageScreen() {
   const [doctor] = useState([
@@ -31,7 +31,7 @@ export default function MessageScreen() {
         <Text style={MessageScreenStyle.title}>Message</Text>
         {doctor.map(doc => (
           <View key={doc.id}>
-            <ListDoctor profile={doc.profile} name={doc.name} desc={doc.desc} />
+            <List profile={doc.profile} name={doc.name} desc={doc.desc} />
           </View>
         ))}
       </View>
