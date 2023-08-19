@@ -1,4 +1,4 @@
-import {StyleSheet, Text, View, TextStyle} from 'react-native';
+import {StyleSheet, Text, TouchableOpacity} from 'react-native';
 import React from 'react';
 import {colors, fonts} from '../../../utils';
 
@@ -6,29 +6,26 @@ interface IProps {
   title?: string;
   size?: number;
   align?: string;
+  onPress?: () => void;
 }
 
-const Link: React.FC<IProps> = (props: IProps) => {
-  const {title, size, align} = props;
+const Link = (props: IProps) => {
+  const {title, size, align, onPress} = props;
   return (
-    <View>
-      <Text style={LinkStyles.text(size, align)}>{title}</Text>
-    </View>
+    <TouchableOpacity onPress={onPress}>
+      <Text style={[LinkStyles.text, {fontSize: size, textAlign: align}]}>
+        {title}
+      </Text>
+    </TouchableOpacity>
   );
 };
 
-interface LinkStyles {
-  text: (size?: number, align?: string) => TextStyle;
-}
-
-const LinkStyles = StyleSheet.create<LinkStyles>({
-  text: (size: number, align: string) => ({
-    fontSize: size,
+const LinkStyles = StyleSheet.create({
+  text: {
     color: colors.text.secondary,
     fontFamily: fonts.primary[400],
     textDecorationLine: 'underline',
-    textAlign: align,
-  }),
+  },
 });
 
 export default Link;
