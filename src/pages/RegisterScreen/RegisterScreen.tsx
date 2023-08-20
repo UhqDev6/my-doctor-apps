@@ -1,4 +1,4 @@
-import {View} from 'react-native';
+import {ScrollView, View} from 'react-native';
 import React from 'react';
 import {Button, Gap, Header, Input} from '../../components';
 import RegisterScreenStyle from './RegisterScreen.style';
@@ -16,19 +16,21 @@ export default function RegisterScreen(props: IProps) {
     <View style={RegisterScreenStyle.container}>
       <Header onPress={() => navigation.goBack()} title="Daftar Akun" />
       <View style={RegisterScreenStyle.content}>
-        <Input label="Full Name" />
-        <Gap height={24} />
-        <Input label="Pekerjaan" />
-        <Gap height={24} />
-        <Input label="Email" />
-        <Gap height={24} />
-        <Input label="Password" />
-        <Gap height={40} />
-        <Button
-          title="continue"
-          type="primary"
-          onPress={() => navigation.navigate(routesEnums.UPLOADPHOTO_SCREEN)}
-        />
+        <ScrollView showsVerticalScrollIndicator={false}>
+          <Input label="Full Name" />
+          <Gap height={24} />
+          <Input label="Pekerjaan" />
+          <Gap height={24} />
+          <Input label="Email" />
+          <Gap height={24} />
+          <Input label="Password" />
+          <Gap height={40} />
+          <Button
+            title="continue"
+            type="primary"
+            onPress={() => navigation.navigate(routesEnums.UPLOADPHOTO_SCREEN)}
+          />
+        </ScrollView>
       </View>
     </View>
   );

@@ -1,5 +1,5 @@
 import {StyleSheet, Text, TextInput, View} from 'react-native';
-import React from 'react';
+import React, {useState} from 'react';
 import {colors} from '../../../utils';
 
 type IProps = {
@@ -7,10 +7,21 @@ type IProps = {
 };
 export default function Input(props: IProps) {
   const {label} = props;
+  const [border, setBorder] = useState(colors.border);
+  const onFocusForm = () => {
+    setBorder(colors.tertiary);
+  };
+  const onBlurForm = () => {
+    setBorder(colors.border);
+  };
   return (
     <View>
       <Text style={InputStyle.label}>{label}</Text>
-      <TextInput style={InputStyle.input} />
+      <TextInput
+        onFocus={onFocusForm}
+        onBlur={onBlurForm}
+        style={[InputStyle.input, {borderColor: border}]}
+      />
     </View>
   );
 }
@@ -18,7 +29,6 @@ export default function Input(props: IProps) {
 const InputStyle = StyleSheet.create({
   input: {
     borderWidth: 1,
-    borderColor: colors.border,
     borderRadius: 10,
     padding: 12,
   },
