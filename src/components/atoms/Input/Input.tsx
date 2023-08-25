@@ -4,9 +4,12 @@ import {colors} from '../../../utils';
 
 type IProps = {
   label?: string;
+  value?: string;
+  onChangeText?: (value: string) => void;
+  secureTextEntry?: boolean;
 };
 export default function Input(props: IProps) {
-  const {label} = props;
+  const {label, value, onChangeText, secureTextEntry} = props;
   const [border, setBorder] = useState(colors.border);
   const onFocusForm = () => {
     setBorder(colors.tertiary);
@@ -21,6 +24,9 @@ export default function Input(props: IProps) {
         onFocus={onFocusForm}
         onBlur={onBlurForm}
         style={[InputStyle.input, {borderColor: border}]}
+        value={value}
+        onChangeText={onChangeText}
+        secureTextEntry={secureTextEntry}
       />
     </View>
   );
